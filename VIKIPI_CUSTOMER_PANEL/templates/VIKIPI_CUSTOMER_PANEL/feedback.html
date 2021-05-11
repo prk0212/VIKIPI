@@ -1,0 +1,120 @@
+{% load static %}
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    <!-- Title Page-->
+    <title>VIKIPI - Feedback</title>
+
+    <!-- Icons font CSS-->
+    <link href="{% static 'VIKIPI_CUSTOMER_PANEL/vendor/mdi-font/css/material-design-iconic-font.min.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'VIKIPI_CUSTOMER_PANEL/vendor/font-awesome-4.7/css/font-awesome.min.css' %}" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="{% static 'VIKIPI_CUSTOMER_PANEL/vendor/select2/select2.min.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'VIKIPI_CUSTOMER_PANEL/vendor/datepicker/daterangepicker.css' %}" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="{% static 'VIKIPI_CUSTOMER_PANEL/css/main.css' %}" rel="stylesheet" media="all">
+</head>
+
+<body>
+    <div class="page-wrapper bg-gra-01 p-t-180 p-b-100 font-poppins">
+        <div class="wrapper wrapper--w780">
+            <div class="card card-3">
+                <div class="card-heading"></div>
+                <div class="card-body">
+                    <h2 class="title">Feedback</h2>
+                    <form action="{% url 'add_feedback_user' %}" method="POST">
+                        {% csrf_token %}
+                        <div class="input-group">
+                            <input class="input--style-3" type="text"  value='{{cid.firstname}} {{cid.lastname}}' name="firstname">
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-3" type="email" placeholder="Email" value="{{uid.email}}" name="email">
+                        </div>
+                        <div class="input-group">
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <select name="overall_experience">
+                                    <option disabled="disabled" selected="selected" >Overall Experience</option>
+                                    <option name="overall_experience" value="Very Good">Very Good</option>
+                                    <option name="overall_experience" value="Good">Good</option>
+                                    <option name="overall_experience" value="Fair">Fair</option>
+                                    <option name="overall_experience" value="Poor">Poor</option>
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <select name="timely_response">
+                                    <option disabled="disabled" selected="selected">Timely Response</option>
+                                    <option name="timely_response" value="Very Good">Very Good</option>
+                                    <option name="timely_response" value="Good">Good</option>
+                                    <option name="timely_response" value="Fair">Fair</option>
+                                    <option name="timely_response" value="Poor">Poor</option>
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <select name="our_support">
+                                    <option disabled="disabled" selected="selected">Our Support</option>
+                                    <option name="our_support" value="Very Good">Very Good</option>
+                                    <option name="our_support" value="Good">Good</option>
+                                    <option name="our_support" value="Fair">Fair</option>
+                                    <option name="our_support" value="Poor">Poor</option>
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <select name="overall_setisfaction">
+                                    <option disabled="disabled" selected="selected">Overall Setisfaction</option>
+                                    <option name="overall_setisfaction" value="Very Good">Very Good</option>
+                                    <option name="overall_setisfaction" value="Good">Good</option>
+                                    <option name="overall_setisfaction" value="Fair">Fair</option>
+                                    <option name="overall_setisfaction" value="Poor">Poor</option>
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="p-t-10">
+                            <button class="btn btn--pill btn--green" type="submit">Add Feedback</button>
+                        </div>
+                        
+                        <div style="margin-top: 4ch;" >
+                            <a href="{% url 'index' %}" style="color:#fff;">Back To Home Page</a>
+                        </div> 
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="{% static 'VIKIPI_CUSTOMER_PANEL/vendor/jquery/jquery.min.js' %}"></script>
+    <!-- Vendor JS-->
+    <script src="{% static 'VIKIPI_CUSTOMER_PANEL/vendor/select2/select2.min.js' %}"></script>
+    <script src="{% static 'VIKIPI_CUSTOMER_PANEL/vendor/datepicker/moment.min.js' %}"></script>
+    <script src="{% static 'VIKIPI_CUSTOMER_PANEL/vendor/datepicker/daterangepicker.js' %}"></script>
+
+    <!-- Main JS-->
+    <script src="{% static 'VIKIPI_CUSTOMER_PANEL/js/global.js' %}"></script>
+
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>
+<!-- end document-->

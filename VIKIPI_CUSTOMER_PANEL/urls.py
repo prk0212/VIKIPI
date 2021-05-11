@@ -1,0 +1,40 @@
+from django.contrib import admin
+from django.urls import path
+from VIKIPI_CUSTOMER_PANEL import views
+
+urlpatterns = [
+    path('', views.abc, name='index'),
+    path('login/',views.login, name='login'),
+    path('login-user/',views.login_user, name='login_user'),
+    path('register/',views.register,name="register"),
+    path('register_user/',views.register_user,name='register_user'),
+    path('logout/',views.logout,name='logout'),
+    path('forgot-password/',views.forgot_password,name="forgot-password"),
+    path('forgot-password-user/',views.forgot_password_user,name="forgot-password-user"),
+    path('reset-password/',views.reset_password,name="reset_password"),
+    path('reset-password-user/',views.reset_password_user,name="reset-password-user"),
+    path('edit-profile/',views.edit_profile,name='edit-profile'),
+    path('edit-profile-user/',views.edit_profile_user,name='edit-profile-user'),
+    path('add_feedback/',views.add_feedback,name='add_feedback'),
+    path('add_feedback_user/',views.add_feedback_user,name='add_feedback_user'),
+    path('view_product_by_category/<int:pk>',views.view_product_by_category,name='view_product_by_category'),
+    path('view_product_by_shop/<int:pk>',views.view_product_by_shop,name='view_product_by_shop'),
+    path('add_to_wishlist/<int:pk>',views.add_to_wishlist,name='add_to_wishlist'),
+    path('view_wishlist/',views.view_wishlist,name='view_wishlist'),
+    path('view_product/<int:pk>',views.view_product,name='view_product'),
+    path('product_feedback/<int:pk>',views.product_feedback,name='product_feedback'),
+    path('product_add_to_cart/<int:pk>',views.product_add_to_cart,name='product_add_to_cart'),
+    path('shopping_cart/',views.shopping_cart,name='shopping_cart'),
+    path('cart_product_remove/<int:pk>',views.cart_product_remove,name='cart_product_remove'),
+    path('cart_qty_inc/<int:pk>',views.cart_qty_inc,name='cart_qty_inc'),
+    path('get_more_tables/',views.get_more_tables,name='get_more_tables'),    
+    path('checkout_page/',views.checkout_page,name='checkout_page'),
+    path('checkout_user/',views.checkout_user,name='checkout_user'),
+    path('payment/',views.payment,name='payment'),
+    path('view_all_products/',views.view_all_products,name='view_all_products'),
+    path('search/',views.search,name='search_product'),
+    path('initiate_payment/',views.initiate_payment,name="initiate_payment"),
+    path('callback/', views.callback, name='callback'),
+    path('updateqty/', views.updateqty, name='updateqty'),
+    path('list_of_orders/',views.order_list,name='order_list')
+]
